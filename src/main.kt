@@ -1,7 +1,9 @@
 import java.awt.Point
 
 fun main() { // 11 задача
-    var area = Area()
+    var area = Area().apply {
+        influences[1].force = 4
+    }
     var plant = Plant().apply {
         location = Point(20, 10)
     }
