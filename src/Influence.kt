@@ -34,3 +34,7 @@ open class SunLight : Influence(){
     open fun minutes(): Int = LocalTime.now().minute % DAY_CIRCLE
 
 }
+
+class q : SunLight(){
+
+}

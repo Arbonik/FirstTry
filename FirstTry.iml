@@ -8,5 +8,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
+    <orderEntry type="library" name="junit:junit:4.13" level="project" />
+    <orderEntry type="library" name="com.nhaarman:mockito-kotlin:1.6.0" level="project" />
+    <orderEntry type="library" name="org.mockito:mockito-core:2.2.2" level="project" />
   </component>
 </module>
