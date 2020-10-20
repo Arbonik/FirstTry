@@ -21,6 +21,16 @@ class AreaView : JFrame(){
     override fun paint(g: Graphics?) {
         var graphic = g as Graphics2D
 //        Сортировка по высоте
+        var xc = Array(1000 * 1000){
+            area.influences[0].get(Point(it % 1000, it / 1000)) / 1000000f
+        }
+        for (y in 0..999){
+            for (x in 0..999){
+                graphic.color = Color.getHSBColor(1f, xc[ y*1000 + x ],1f)
+                graphic.drawRect(x,y,1,1)
+            }
+        }
+
         area.plants.sortBy { it.height }
         for (plant in area.plants){
 //            изменение цвета по индивиуальному цветку
@@ -32,8 +42,8 @@ class AreaView : JFrame(){
             plant.r)
         }
 //        перерасчет роста
-        area.countInfluens()
-        repaint()
+     //   area.countInfluens()
+        //repaint()
     }
 
 }

@@ -2,12 +2,12 @@ import java.awt.Point
 import java.time.LocalTime
 
 abstract class Influence {
-    var force = 0
+    var force = 1
     abstract fun get(p : Point) : Int
 }
 
 class Humidity : Influence(){
-    override fun get(p: Point): Int = p.x * p.y *force
+    override fun get(p: Point): Int = p.x * p.y * force
 }
 
 class Mineral : Influence(){
