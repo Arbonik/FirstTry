@@ -10,26 +10,30 @@ import javax.swing.JFrame
 
 class AreaView : JFrame(){
     var area = Area().apply {
-        plants = mutableListOf(
+        plants = MutableList(30) {
             Plant().apply {
-            r = 100
-            location = Point(400, 300)
-        },
-            Plant().apply {
-                r =200
-                location = Point(200, 100)
-            })
-
+                r = (30..130).random()
+                location = Point((0..900).random(), (0..900).random())
+            }
+        }
     }
+
     override fun paint(g: Graphics?) {
         var graphic = g as Graphics2D
-        graphic.color = Color.GREEN
+//        Сортировка по высоте
+        area.plants.sortBy { it.height }
         for (plant in area.plants){
+//            изменение цвета по индивиуальному цветку
+            graphic.color = plant.color
+
             graphic.fillOval(plant.location.x,
             plant.location.y,
             plant.r,
             plant.r)
-
         }
+//        перерасчет роста
+        area.countInfluens()
+        repaint()
     }
+
 }
